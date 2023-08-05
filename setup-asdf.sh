@@ -6,10 +6,10 @@ sudo /bin/bash -c 'echo ". $HOME/.asdf/asdf.sh" >> /root/.bashrc'
 NEOVIM_VERSION=0.9.1
 NODEJS_VERSION=18.17.0
 
-asdf plugin add neovim 
-asdf install neovim $NEOVIM_VERSION 
-asdf global neovim $NEOVIM_VERSION 
+asdf plugin add neovim
+asdf install neovim $NEOVIM_VERSION
+asdf global neovim $NEOVIM_VERSION
 
-asdf plugin add nodejs 
-asdf install nodejs $NODEJS_VERSION 
+asdf plugin add nodejs
+asdf install nodejs $NODEJS_VERSION
 asdf global nodejs $NODEJS_VERSION

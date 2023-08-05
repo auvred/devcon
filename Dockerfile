@@ -2,9 +2,6 @@ FROM ubuntu:22.04
 
 ARG USERNAME=auvred
 
-ARG NEOVIM_VERSION=0.9.1
-ARG NODEJS_VERSION=18.17.0
-
 RUN apt update \
  && apt upgrade -y \
  && apt install -y \
