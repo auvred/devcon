@@ -6,3 +6,4 @@ curl -o- https://raw.githubusercontent.com/auvred/dotfiles/master/install.sh | b
 echo ". $HOME/.asdf/asdf.sh" >> $HOME/.zshrc
 
 echo "store-dir=~/.pnpm-store" > ~/.npmrc
+npm i -g pnpm

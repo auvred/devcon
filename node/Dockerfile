@@ -30,8 +30,8 @@ RUN /bin/bash /tmp/setup-asdf.sh \
 ENV MY_WORKSPACE_TYPE="dev-container"
 ENV MY_WORKSPACE_NAME="Dev Container"
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
-ADD "https://api.github.com/repos/auvred/dotfiles/commits?per_page=1" latest_commit
 
+ADD "https://api.github.com/repos/auvred/dotfiles/commits?per_page=1" latest_commit
 COPY setup-stuff.sh /tmp
 RUN /bin/bash /tmp/setup-stuff.sh \
  && sudo rm /tmp/setup-stuff.sh
