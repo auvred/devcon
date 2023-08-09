@@ -28,6 +28,7 @@ jobs:
 
   push_rest_images:
     name: Push rest images
+    needs: push_node_image
     runs-on: ubuntu-latest
 
     strategy:
