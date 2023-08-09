@@ -24,8 +24,7 @@ jobs:
           tags: |
             auvred/devcon:latest
             auvred/devcon:node
-          context: ./node
-          file: ./node/Dockerfile
+          context: "{{defaultContext}}:node"
           push: true
 
   push_rest_images:
@@ -52,6 +51,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           tags: auvred/devcon:${{ matrix.tag }}
-          context: ./${{ matrix.tag }}
-          file: ./${{ matrix.tag }}/Dockerfile
+          context: "{{defaultContext}}:${{ matrix.tag }}"
           push: true
