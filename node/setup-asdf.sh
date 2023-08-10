@@ -4,7 +4,7 @@ sudo /bin/bash -c 'echo ". $HOME/.asdf/asdf.sh" >> /root/.bashrc'
 . $HOME/.asdf/asdf.sh
 
 NEOVIM_VERSION=0.9.1
-NODEJS_VERSION=18.17.0
+NODEJS_VERSION=18.17.1
 
 asdf plugin add neovim
 asdf install neovim $NEOVIM_VERSION

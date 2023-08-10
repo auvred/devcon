@@ -7,3 +7,5 @@ echo ". $HOME/.asdf/asdf.sh" >> $HOME/.zshrc
 
 echo "store-dir=~/.pnpm-store" > ~/.npmrc
 npm i -g pnpm
+
+mkdir $HOME/.ssh
