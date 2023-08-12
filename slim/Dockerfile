@@ -19,8 +19,9 @@ SHELL ["/bin/bash", "-lc"]
 WORKDIR /home/$USERNAME
 
 RUN git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.12.0 \
- && sed -i '1s;^;source $HOME/.asdf/asdf.sh\n;' ~/.bashrc \
- && asdf plugin add neovim \
+ && sed -i '1s;^;source $HOME/.asdf/asdf.sh\n;' ~/.bashrc
+
+RUN asdf plugin add neovim \
  && asdf install neovim $NEOVIM_VERSION \
  && asdf global neovim $NEOVIM_VERSION
 
