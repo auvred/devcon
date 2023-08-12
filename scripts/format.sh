@@ -3,4 +3,4 @@ npx -y prettier-pnp \
   --write \
   **.sh \
   **.md \
-  .github 
+  .github

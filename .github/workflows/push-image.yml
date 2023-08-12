@@ -4,9 +4,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  push_node_image:
-    name: Push node image
+  push_base_images:
+    name: Push base images
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        tag: [base, slim]
 
     steps:
       - name: Set up Docker Buildx
@@ -21,8 +25,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          tags: auvred/devcon:latest
-          context: "{{defaultContext}}:node"
+          tags: auvred/devcon:${{ matrix.tag == 'base' && 'latest' || matrix.tag }}
+          context: "{{defaultContext}}:${{ matrix.tag }}"
           push: true
 
   push_rest_images:
