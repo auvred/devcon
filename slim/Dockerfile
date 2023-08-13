@@ -33,6 +33,6 @@ ADD "https://api.github.com/repos/auvred/dotfiles/commits?per_page=1" latest_com
 RUN sudo locale-gen en_US.UTF-8 \
  && curl -o- https://raw.githubusercontent.com/auvred/dotfiles/master/install.sh | bash \
  && rm -rf ~/.dotfiles/.git \
- && echo ". $HOME/.asdf/asdf.sh" >> $HOME/.zshrc \
+ && echo ". $HOME/.asdf/asdf.sh" >> $HOME/.zshenv \
  && mkdir $HOME/.ssh \
  && sudo rm -rf /tmp/*

@@ -45,7 +45,7 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 ADD "https://api.github.com/repos/auvred/dotfiles/commits?per_page=1" latest_commit
 RUN sudo locale-gen en_US.UTF-8 \
  && curl -o- https://raw.githubusercontent.com/auvred/dotfiles/master/install.sh | bash \
- && echo ". $HOME/.asdf/asdf.sh" >> $HOME/.zshrc \
+ && echo ". $HOME/.asdf/asdf.sh" >> $HOME/.zshenv \
  && mkdir $HOME/.ssh \
  && echo "store-dir=~/.pnpm-store" > ~/.npmrc \
  && npm i -g pnpm \
