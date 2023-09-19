@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 ARG USERNAME=auvred
 ARG NEOVIM_VERSION=0.9.2
-ARG NODEJS_VERSION=18.17.1
+ARG NODEJS_VERSION=18.18.0
 
 RUN apt update \
  && apt upgrade -y \
@@ -24,7 +24,7 @@ USER $USERNAME
 SHELL ["/bin/bash", "-lc"]
 WORKDIR /home/$USERNAME
 
-RUN git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.12.0 \
+RUN git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.13.1 \
  && sed -i '1s;^;source $HOME/.asdf/asdf.sh\n;' ~/.bashrc
 
 RUN asdf plugin add neovim \
