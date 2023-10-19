@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 ARG USERNAME=auvred
-ARG NEOVIM_VERSION=0.9.2
+ARG NEOVIM_VERSION=0.9.4
 
 RUN apt update \
  && apt install -y \
