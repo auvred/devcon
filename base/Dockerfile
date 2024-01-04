@@ -1,8 +1,8 @@
 FROM ubuntu:22.04
 
 ARG USERNAME=auvred
-ARG NEOVIM_VERSION=0.9.4
-ARG NODEJS_VERSION=18.18.2
+ARG NEOVIM_VERSION=nightly
+ARG NODEJS_VERSION=20.10.0
 
 RUN apt update \
  && apt upgrade -y \
@@ -33,9 +33,9 @@ RUN asdf plugin add neovim \
  && asdf plugin add nodejs \
  && asdf install nodejs $NODEJS_VERSION \
  && asdf global nodejs $NODEJS_VERSION \
- # Remove unused OpenSSL headers to save ~34MB
+ # Remove unused OpenSSL headers to save ~50MB
  # Source: https://github.com/nodejs/docker-node/pull/1923
- # TODO: remove after https://github.com/nodejs/node/issues/46451 will be resolved
+ # TODO: wait for https://github.com/nodejs/node/issues/46451 to be resolved
  && find $(asdf where nodejs)/include/node/openssl/archs -mindepth 1 -maxdepth 1 ! -name "linux-x86_64" -exec rm -rf {} \;
 
 ENV MY_WORKSPACE_TYPE="dev-container"
